@@ -1,0 +1,679 @@
+
+entity CssRegistration {
+	custID Long,
+    userID Long,
+    firstName String,
+    lastName String,
+    middleName String,
+    emailId String,
+    phoneNumber String,
+    pasword String,
+    secQuestion1 String,
+    secAnswer1 String,
+    secQuestion2 String,
+    secAnswer2 String,
+    secQuestion3 String,
+    secAnswer3 String,
+    secQuestion4 String,
+    secAnswer4 String,
+    secQuestion5 String,
+    secAnswer5 String,
+    pswdResetFlag String,
+    firstTimeLogin String,
+    invalidLoginCount Long,
+    lastInvalidLoginDate Instant,
+    invalidAccLookupCount Long,
+    lastAccLookupDate Instant,
+    invalidVeifyCodeCount Long,
+    lastVeifyCodeDate Instant,
+    verifyToken String,
+    userStatus String,
+    cisCustId Long,
+    externalSystem String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    secTerms String,
+    pmtWalletId String,
+    socialMediaType String,
+    perfLang String,
+    guid String,
+    lastLoginTime Instant,
+    tokenExpiryTime Instant,
+    passwordExpiryDt Instant
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity CssAccount {
+	accessLevel String,
+    accountId Long,
+    accountNickname String,
+    accountNumber String,
+    accountType String,
+    acctAccessType String,
+    blockedAch String,
+    blockedCC String,
+    chkHighUsage String,
+    chkPepaidThreshAmt String,
+    chkPrepaidThreshPerct String,
+    companyCode String,
+    createdBy String,
+    createdDate Instant,
+    custId Long,
+    defaultAccount String,
+    externalSystem String,
+    firstTimeLogin String,
+    language String,
+    modifiedBy String,
+    modifiedDate Instant,
+    personId String,
+    serviceAddress String,
+    statusInd String,
+    userAccountStatus String
+}
+
+entity CssAccountSharing {
+    emailAddress String,
+    phoneNumber String,
+    tempPass String,
+    accountNumber String,
+    name String,
+    ownerCustomerId Long,
+    sharedCustomerId Long,
+    createdBy String,
+    createdDate Instant
+}
+
+entity CssAccountLog {
+    accountNumber String,
+    description String,
+    logKey String,
+    createdBy String,
+    createdDate Instant,
+    userId String,
+    userType String,
+    createdOn Instant
+}
+
+entity CssPaymentRepl {
+    accountNumber String,
+    thresholdAmt String,
+    replAmt String,
+    bankAccNum String,
+    banckROUNum String
+}
+
+entity CssServiceOrdersRjtQ {
+    id Long,
+    customerCode String,
+    premCode String,
+    startDate String,
+    rejectCode String,
+    createdDate Instant,
+    createdBy String,
+    lastModifiedDate Instant,
+    lastModifiedBy String,
+    status String,
+    firstName String,
+    lastName String,
+    address String,
+    phoneNumber String,
+    emailAddress String,
+    services String,
+    mailingAddress String,
+    transferInd String,
+    pastDueAmts String,
+    depositAmt Decimal,
+    employer String,
+    stopServiceDate String,
+    stopMailingAddress String,
+    stopMailingCity String,
+    stopMailingState String,
+    stopMailingZip String,
+    stopMailingAddrOption String,
+    stopAcctNum String
+}
+
+entity CssRjtCodes {
+    id Integer,
+    code String,
+    errDesc String,
+    langCode String,
+    modifiedBy String,
+    modifiedDate Instant
+}
+
+entity CssRjtCodesHistory {
+    errorHistId Integer,
+    errorId Integer,
+    code String,
+    errDesc String,
+    oldErrDesc String,
+    langCode String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant
+
+}
+
+entity PubRefTableColumnData {
+    id Integer,
+    tableId Integer,
+    columnId Integer,
+    rowId Integer,
+    colmnValue String
+}
+
+entity CssContentSetup {
+    contentId Integer,
+    contentName String,
+    contentDesc String,
+    contentSectionName String,
+    contentValue String,
+    variables String,
+    startDate Instant,
+    endDate Instant,
+    activeInd String,
+    imgHeading1 String,
+    imgHeading2 String,
+    link String,
+    imageID String,
+    esContentValue String,
+    contentStatus String,
+    langCode String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    companyCode String
+}
+
+entity CssContentSetupTemp {
+    contentId Integer,
+    contentName String,
+    contentDesc String,
+    contentSectionName String,
+    contentValue String,
+    startDate Instant,
+    endDate Instant,
+    activeInd String,
+    imgHeading1 String,
+    imgHeading2 String,
+    link String,
+    imageID String,
+    esContentValue String,
+    contentStatus String,
+    langCode String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    companyCode String
+}
+
+entity CssContentSetupHistory {
+    contentHistId Integer,
+    contentId Integer,
+    contentName String,
+    contentDesc String,
+    contentSectionName String,
+    contentValue String,
+    esContentValue String,
+    startDate Instant,
+    endDate Instant,
+    activeInd String,
+    imgHeading1 String,
+    imgHeading2 String,
+    link String,
+    imageID String,
+    newContentValue String,
+    newESContentvalue String,
+    langCode String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant
+}
+
+entity CssContentLang {
+    langCode String,
+    langDesc String
+}
+
+entity CssContentMGMNT {
+    imageId String,
+    image LongBlob
+}
+
+entity CssWebSettings {
+    settingKey String,
+    settingVal String,
+    modifiedBy String,
+    modifiedDate Instant
+    companyCode String,
+    groupName String,
+    displayName String
+}
+
+entity CssNotificationTemplates {
+    id Integer,
+    notificationName String,
+    notificationtype String,
+    notificationCategory String,
+    templateContent String,
+    variables String,
+    templateStatus String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    companyCode String,
+    langCode String,
+    subjectLine String
+}
+
+entity CssNotificationTemplatesTemp {
+    id Integer,
+    notificationName String,
+    notificationtype String,
+    notificationCategory String,
+    templateContent String,
+    variables String,
+    templateStatus String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    companyCode String,
+    langCode String,
+    subjectLine String
+}
+
+entity CssLkupNotificationCategory {
+    id Integer,
+    notificationCategory String,
+    description String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant
+}
+
+entity CssCustRebates {
+    rebateReqId Integer,
+    custId String,
+    accountNumebr String,
+    servAddress String,
+    mailAddress String,
+    customerName String,
+    phone String,
+    emailAddress String,
+    rebateType String,
+    rebateStatus String,
+    file1 String,
+    file2 String,
+    file3 String,
+    comment String,
+    rebateId Integer,
+    documentId String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant
+}
+entity CssSurveySetup {
+    surveyId Integer,
+    question String,
+    answer1 String,
+    answer2 String,
+    answer3 String,
+    answer4 String,
+    modifiedBy String,
+    modifiedDate Instant,
+    contentId Integer
+}
+
+entity CssCustSurveyContent {
+    contentId Integer,
+    contentName String,
+    contentDesc String,
+    contentSectionName String,
+    contentvalue String,
+    startDate Instant,
+    endDate Instant,
+    activeInd String,
+    contentStatus String,
+    langCode String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    esContentvalue String
+}
+
+entity CssCustSurveyResponses {
+    respId Integer,
+    question String,
+    answer String,
+    customerName String,
+    phone String,
+    emailAddress String,
+    accountNumber String,
+    userId String,
+    createdDate Instant,
+    createdBy String,
+    surveyId Integer,
+    auditTrail String
+}
+entity CssRebatesSetup {
+    rebateId Integer,
+    rebateName String,
+    category String,
+    shortDesc String,
+    description String,
+    startDate Instant,
+    endDate Instant,
+    pdf String,
+    image String,
+    file1 String,
+    file2 String,
+    file3 String,
+    cisInd String,
+    rebateForm String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant
+}
+
+entity CssAccountPwdReset {
+    seqId Integer,
+    userId String,
+    token String,
+    expDate Instant,
+    createdDate Instant,
+    createdBy String
+}
+
+entity CssCustPaymentTransactions {
+    seqId Integer,
+    customerName String,
+    custId String,
+    accountNumber String,
+    amount String,
+    paymentTranNumber String,
+    paymentTransToken String,
+    paymentConfNum String,
+    transactionDate Instant,
+    refundTranNumber String,
+    paymentStatus String,
+    paymenttype String,
+    transactionType String,
+    savedCardPayment String,
+    schdPaymentInd String,
+    externalSystem String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    portalRefNum String,
+    paymentJson String,
+    personId String,
+    paymentRefNum String
+}
+entity CssAdminUsers {
+    userId String,
+    password String,
+    firstName String,
+    lastName String,
+    emailId String,
+    roleId String,
+    createdDate Instant,
+    modifiedDate Instant,
+    deleteInd String,
+    cobrowseCode String,
+    paceUserRefId String,
+    paceUserAuthCode String
+}
+
+entity CssAdminLogins {
+    seqId Integer,
+    adminUserId String,
+    token String,
+    expDate Instant,
+    createdDate Instant,
+    createdBy String
+}
+
+entity CssAdminRoles {
+    roleId Integer,
+    roleName String,
+    roleDesc String,
+    createdDate Instant,
+}
+
+entity CssAdminFeatures {
+    featureName String,
+    featureId String
+}
+
+entity CssCobrowseStats {
+    id Integer,
+    chatDate String,
+    totalSession String,
+    pageVisited String,
+    avgTime String,
+    totalTime String
+}
+
+entity CssApiNameDesc {
+    apiName String,
+    apiDesc String,
+    isActive String,
+    createdDate Instant,
+    createdBy String
+}
+
+entity CssAnalyticsInfo {
+    analyId Integer,
+    analyTitle String,
+    controllerName String,
+    analyGroupByColumn String,
+    graphName String,
+    className String,
+    analyWhereCondition String
+}
+
+entity CssNotificationHist {
+    notificationHistId Integer,
+    notificationHistType String,
+    notificationStatus String,
+    notificationDesc String,
+    notificationContent String,
+    accountNumber String,
+    contactInfo String,
+    sentDate Instant,
+    notificationContactType String,
+    userId String,
+    userName String,
+    createdDate Instant,
+    createdBy String,
+    acctNumber String,
+    companyCode String,
+    notificationGenId String,
+    subjectLine String
+}
+// Table not exist in dev may be view
+entity CssStatsSummary {
+    activityDate String,
+    apiCategory String,
+    apiDesc String,
+    apiName String,
+    externalSystem String,
+    acctNumber String,
+    successCount Integer,
+    failureCount Integer
+}
+entity CssStats {
+    acctNumber String,
+    activityDate Instant,
+    apiName String,
+    companyCode String,
+    externalSystem String,
+    ipAddress String,
+    notes String,
+    sequenceId Integer,
+    status String,
+    userId String
+}
+
+entity DailyAnalyticsCounts {
+    date Instant,
+    type String,
+    counts String
+}
+
+entity CssAdminPortalLogins {
+    customerId String,
+    token String,
+    expDate Instant,
+    createdDate Instant,
+    createdBy String,
+    csrUserId String,
+    readOnly String
+}
+entity CssRoleFeatureActivity {
+    roleId String,
+    roleName String,
+    roleDesc String,
+    description String,
+    createdDate Instant,
+    createdBy String,
+    history String
+}
+
+entity CssCustContactRequest {
+    contactReqId Integer,
+    servAddress String,
+    accountNumber String,
+    incidentDate Instant,
+    incidentTime String,
+    issueType String,
+    comments String,
+    file1 String,
+    file2 String,
+    file3 String,
+    customerName String,
+    phone String,
+    emailAddress String,
+    requestStatus String,
+    custId String,
+    auditTrail String,
+    agencyName String,
+    acctHolderName String,
+    assignedUser String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    subCategory String,
+    agencyRepName String,
+    paymentDate Instant,
+    paymentConfirmNbr String,
+    paymentTo String,
+    paymentLocation String,
+    paymentMethod String,
+    creditCardFirst2 String,
+    creditCardLast4 String,
+    busineesName String,
+    businessLicense String,
+    serviceAddrList String,
+    billingAddress String,
+    requestedDate Instant,
+    custType String,
+    residencyType String,
+    custDob Instant,
+    employerName String,
+    paperlessbilling String,
+    dlNum String,
+    dlState String,
+    taxId String,
+    businessLicState String,
+    trnsferStopServAddr String,
+    trnsferStopBillAddr String,
+    trnsfrStopReqDate Instant,
+    numInstall String,
+    downPayAmt String,
+    serviceDesc String,
+    servType String,
+    totalDueAmt String,
+    taskId String
+}
+
+entity CssUsageBreakDownTypes {
+    utilityType String,
+    applianceType String,
+    applianceName String,
+    percentage Integer,
+    utilityTypeCD String,
+    usageBreakDownTypeId Integer,
+    imageName String
+}
+
+entity CssBatchFileProcess {
+    batchId Integer,
+    fileName String,
+    fileDate Instant,
+    processStatus String,
+    createdDate Instant,
+    createdBy String,
+    modifiedBy String,
+    modifiedDate Instant,
+    recordCount Integer
+}
+
+entity CssBatchProcess {
+    batchId Integer,
+    batchDate Instant,
+    processStatus String,
+    recordCount Integer,
+    createdDate Instant,
+    createdBy String,
+    jobName String,
+    modifiedDate Instant
+}
+
+entity CssVariableList {
+    id Integer,
+    varName String,
+    varDesc String
+}
+
+relationship OneToOne {
+	CssAccount{cssAccount} to CssRegistration
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	CssCustUsageGroupUOM{cssCustUsageGroupUOM} to CssLkupUsageUOM
+	CssCustUsageGroupUOM{cssCustUsageGroupUOM} to CssCustUsageGroup
+}
+
+relationship OneToOne {
+	CssCustUsageGroupAccount{cssCustUsageGroupAccount} to CssCustUsageGroup
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate CssRegistration with pagination
+paginate CssAccount with pagination
+
+// Set service options to all except few
+service all with serviceImpl 
+//except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
